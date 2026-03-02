@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/panthrocorp/github-account-switcher/compare/v1.1.5...v1.2.0) (2026-03-02)
+
+### Features
+
+* add README hero screenshot via Playwright mockup ([#8](https://github.com/panthrocorp/github-account-switcher/issues/8)) ([46ac3d3](https://github.com/panthrocorp/github-account-switcher/commit/46ac3d33a7bcbd79b14e5c75d358f789c1e719a4))
+
 ## [1.1.5](https://github.com/panthrocorp/github-account-switcher/compare/v1.1.4...v1.1.5) (2026-03-02)
 
 ### Bug Fixes
