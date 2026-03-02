@@ -24,14 +24,35 @@ jobs:
         run: pip install ruff
 
       - name: Lint
-        run: ruff check src/
+        run: ruff check src/ tests/
 
       - name: Format check
-        run: ruff format --check src/
+        run: ruff format --check src/ tests/
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dev dependencies
+        run: pip install -q -e ".[dev]"
+
+      - name: Python tests
+        run: python -m pytest tests/ --ignore=tests/bash -v
+
+      - name: Shell tests (bats)
+        run: libs/bats/bin/bats tests/bash/install.bats
 
   release:
     name: Release
-    needs: [python]
+    needs: [python, test]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
