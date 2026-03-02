@@ -1,3 +1,9 @@
+## [1.1.4](https://github.com/panthrocorp/github-account-switcher/compare/v1.1.3...v1.1.4) (2026-03-02)
+
+### Bug Fixes
+
+* add missing PyPI project metadata ([#6](https://github.com/panthrocorp/github-account-switcher/issues/6)) ([1bd2a76](https://github.com/panthrocorp/github-account-switcher/commit/1bd2a76fda8feee3505aaadef147f826f8fb5b03))
+
 ## [1.1.3](https://github.com/panthrocorp/github-account-switcher/compare/v1.1.2...v1.1.3) (2026-03-02)
 
 ### Bug Fixes
