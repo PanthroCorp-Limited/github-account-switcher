@@ -46,9 +46,18 @@ curl -fsSL https://raw.githubusercontent.com/panthrocorp/github-account-switcher
 
 Installs to `~/.local/share/gh-switcher` and links the binary to `~/.local/bin/gh-switcher`. Re-running upgrades to the latest release.
 
+### via pipx
+
+Requires system GTK/XApp bindings first, then install with `--system-site-packages` so the venv can access them:
+
+```bash
+sudo apt-get install -y gir1.2-xapp-1.0 python3-gi python3-gi-cairo
+pipx install gh-switcher --system-site-packages
+```
+
 ### via pip
 
-For users who prefer full control over the install. Because `python3-gi` and `gir1.2-xapp-1.0` are system packages not available on PyPI, a plain `pip3 install gh-switcher` will fail at runtime. Use a venv with `--system-site-packages` instead:
+For users who prefer full control over the install. Because `python3-gi` and `gir1.2-xapp-1.0` are system packages not available on PyPI, a plain `pip install gh-switcher` will fail at runtime on modern Ubuntu/Debian. Use a venv with `--system-site-packages` instead:
 
 ```bash
 # System deps (once)
@@ -96,6 +105,25 @@ Quit
 ```
 
 Toggle **Start on Login** to add or remove the XDG autostart entry (`~/.config/autostart/gh-switcher.desktop`).
+
+### Starting on login
+
+The easiest way is via the tray menu — click **Start on Login** to toggle it. To do it manually, create the XDG autostart entry:
+
+```bash
+mkdir -p ~/.config/autostart
+cat > ~/.config/autostart/gh-switcher.desktop <<EOF
+[Desktop Entry]
+Type=Application
+Name=gh-switcher
+Exec=gh-switcher
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+EOF
+```
+
+Remove the file to disable autostart.
 
 ## Configuration
 
