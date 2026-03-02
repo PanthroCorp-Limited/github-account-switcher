@@ -3,6 +3,11 @@ name: Publish
 on:
   release:
     types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to publish (e.g. v1.2.3)'
+        required: true
 
 permissions:
   contents: write   # gh release upload
@@ -17,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.release.tag_name }}
+          ref: ${{ github.event.release.tag_name || inputs.tag }}
 
       - uses: actions/setup-python@v5
         with:
@@ -61,7 +66,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.release.tag_name }}
+          ref: ${{ github.event.release.tag_name || inputs.tag }}
 
       - uses: actions/download-artifact@v4
         with:
@@ -91,6 +96,6 @@ jobs:
             /tmp/gh-switcher-root/=/
 
       - name: Attach .deb to release
-        run: gh release upload "${{ github.event.release.tag_name }}" ./*.deb --clobber
+        run: gh release upload "${{ github.event.release.tag_name || inputs.tag }}" ./*.deb --clobber
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

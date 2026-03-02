@@ -59,6 +59,7 @@ jobs:
       contents: write
       issues: write
       pull-requests: write
+      actions: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -73,6 +74,25 @@ jobs:
 
       - run: npm ci
 
+      - name: Record current latest tag
+        id: before_release
+        run: |
+          git fetch --tags --quiet
+          echo "tag=$(git describe --tags --abbrev=0 2>/dev/null || echo '')" >> "$GITHUB_OUTPUT"
+
       - run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Trigger publish if new release was created
+        run: |
+          git fetch --tags --quiet
+          NEW_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          if [[ -n "${NEW_TAG}" && "${NEW_TAG}" != "${{ steps.before_release.outputs.tag }}" ]]; then
+            echo "New release detected: ${NEW_TAG} — triggering publish workflow"
+            gh workflow run publish.yml --ref "${NEW_TAG}"
+          else
+            echo "No new release — skipping publish"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
