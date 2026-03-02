@@ -1,3 +1,9 @@
+## [1.1.5](https://github.com/panthrocorp/github-account-switcher/compare/v1.1.4...v1.1.5) (2026-03-02)
+
+### Bug Fixes
+
+* document pipx --system-site-packages install ([#7](https://github.com/panthrocorp/github-account-switcher/issues/7)) ([bb4e8ac](https://github.com/panthrocorp/github-account-switcher/commit/bb4e8ac8cddd25a21f267c07e3e3bf930ff988a2))
+
 ## [1.1.4](https://github.com/panthrocorp/github-account-switcher/compare/v1.1.3...v1.1.4) (2026-03-02)
 
 ### Bug Fixes
