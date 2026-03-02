@@ -9,9 +9,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 make install              # create .venv (--system-site-packages) and install editable
 
 # Quality
-make lint                 # ruff check src/
-make format               # ruff format src/
-make test                 # pytest tests/
+make lint                 # ruff check src/ tests/
+make format               # ruff format src/ tests/
+make test                 # pytest + bats (test-py + test-bash)
+make test-py              # pytest tests/ (unit tests)
+make test-bash            # bats tests/bash/ (install.sh tests)
 
 # Run
 .venv/bin/gh-switcher
@@ -57,7 +59,7 @@ Hatchling via `pyproject.toml`. Source layout: `src/gh_switcher/`. Entry point: 
 
 **All platforms**: `gh` CLI must be installed and have at least one authenticated account.
 
-**Linux**: Requires system packages `python3-xapp` and `python3-gi` (GTK3 introspection) for the tray icon. `notify-send` is optional for notifications. DejaVu fonts are optional for icon rendering.
+**Linux**: Requires system packages `gir1.2-xapp-1.0`, `python3-gi`, and `python3-gi-cairo` (GTK3 introspection) for the tray icon. `notify-send` is optional for notifications. DejaVu fonts are optional for icon rendering.
 
 **macOS / Windows**: The `pystray` pip dependency is installed automatically (conditional in `pyproject.toml`).
 

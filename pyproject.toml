@@ -16,5 +16,14 @@ dependencies = [
 [project.scripts]
 gh-switcher = "gh_switcher.__main__:main"
 
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.9",
+]
+
 [tool.hatch.build.targets.wheel]
 packages = ["src/gh_switcher"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
