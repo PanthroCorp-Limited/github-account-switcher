@@ -1,3 +1,9 @@
+## [1.3.0](https://github.com/panthrocorp/github-account-switcher/compare/v1.2.0...v1.3.0) (2026-03-02)
+
+### Features
+
+* auto-detect external gh auth switch ([#9](https://github.com/panthrocorp/github-account-switcher/issues/9)) ([0ffca42](https://github.com/panthrocorp/github-account-switcher/commit/0ffca42f66ed502eb886a38e5f69a9df4f37ac3a))
+
 ## [1.2.0](https://github.com/panthrocorp/github-account-switcher/compare/v1.1.5...v1.2.0) (2026-03-02)
 
 ### Features
