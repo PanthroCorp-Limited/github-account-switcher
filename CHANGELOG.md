@@ -1,3 +1,9 @@
+## [1.1.3](https://github.com/panthrocorp/github-account-switcher/compare/v1.1.2...v1.1.3) (2026-03-02)
+
+### Bug Fixes
+
+* pass tag input when dispatching publish workflow ([#5](https://github.com/panthrocorp/github-account-switcher/issues/5)) ([c37450e](https://github.com/panthrocorp/github-account-switcher/commit/c37450ec498e031e16feeafb1c476b590a3fe0c7))
+
 ## [1.1.2](https://github.com/panthrocorp/github-account-switcher/compare/v1.1.1...v1.1.2) (2026-03-02)
 
 ### Bug Fixes
