@@ -90,7 +90,7 @@ jobs:
           NEW_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
           if [[ -n "${NEW_TAG}" && "${NEW_TAG}" != "${{ steps.before_release.outputs.tag }}" ]]; then
             echo "New release detected: ${NEW_TAG} — triggering publish workflow"
-            gh workflow run publish.yml --ref "${NEW_TAG}"
+            gh workflow run publish.yml --ref "${NEW_TAG}" -f tag="${NEW_TAG}"
           else
             echo "No new release — skipping publish"
           fi
