@@ -2,6 +2,8 @@
 
 A lightweight system tray app for switching between multiple GitHub accounts (`gh` CLI) with a single click. Each account can carry its own git identity (name + email), which is applied automatically on switch.
 
+![gh-switcher tray menu](docs/screenshots/tray-menu.png)
+
 ## Platform support
 
 | Platform                              | Status       |
@@ -91,18 +93,7 @@ Run it:
 
 ## Usage
 
-Launch `gh-switcher` — the tray icon appears in your system tray. Left-click (or right-click) to open the menu:
-
-```text
-✓  alice
-   alice-work
-──────────────────
-Refresh
-Configure accounts...
-Start on Login [ ]
-──────────────────
-Quit
-```
+Launch `gh-switcher` — the tray icon appears in your system tray. Left-click (or right-click) to open the menu and select an account to switch.
 
 Toggle **Start on Login** to add or remove the XDG autostart entry (`~/.config/autostart/gh-switcher.desktop`).
 
