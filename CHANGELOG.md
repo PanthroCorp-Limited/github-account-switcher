@@ -1,3 +1,9 @@
+## [1.1.1](https://github.com/panthrocorp/github-account-switcher/compare/v1.1.0...v1.1.1) (2026-03-02)
+
+### Bug Fixes
+
+* guard BASH_SOURCE against unbound in curl pipe ([#3](https://github.com/panthrocorp/github-account-switcher/issues/3)) ([e40049b](https://github.com/panthrocorp/github-account-switcher/commit/e40049ba823faeeb2a291a374de384b9c1188d9c))
+
 ## [1.1.0](https://github.com/panthrocorp/github-account-switcher/compare/v1.0.0...v1.1.0) (2026-03-02)
 
 ### Features
