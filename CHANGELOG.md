@@ -1,3 +1,9 @@
+## [1.1.2](https://github.com/panthrocorp/github-account-switcher/compare/v1.1.1...v1.1.2) (2026-03-02)
+
+### Bug Fixes
+
+* trigger publish workflow from CI after release ([#4](https://github.com/panthrocorp/github-account-switcher/issues/4)) ([bc20c4e](https://github.com/panthrocorp/github-account-switcher/commit/bc20c4e73074d35589e9d79b112d79c0993b7727))
+
 ## [1.1.1](https://github.com/panthrocorp/github-account-switcher/compare/v1.1.0...v1.1.1) (2026-03-02)
 
 ### Bug Fixes
