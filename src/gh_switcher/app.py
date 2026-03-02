@@ -17,6 +17,7 @@ class GhSwitcherApp:
     def __init__(self) -> None:
         self._backend: TrayBackend = get_backend()
         self._accounts: list[GhAccount] = []
+        self._file_monitor: object | None = None
 
     # -- Public ---------------------------------------------------------------
 
@@ -30,6 +31,7 @@ class GhSwitcherApp:
         self._accounts = load_accounts()
         config.ensure_exists(self._accounts, current_identity)
         self.refresh()
+        self._start_file_watch()
 
     def refresh(self) -> None:
         self._accounts = load_accounts()
@@ -41,6 +43,35 @@ class GhSwitcherApp:
         tooltip = f"gh: {active.username}" if active else "gh-switcher"
         self._backend.set_tooltip(tooltip)
         self._backend.set_menu(self._build_menu())
+
+    def _start_file_watch(self) -> None:
+        if sys.platform != "linux":
+            return
+        import gi
+
+        gi.require_version("Gio", "2.0")
+        from gi.repository import Gio
+
+        monitor = Gio.File.new_for_path(str(accounts_mod.HOSTS_FILE)).monitor_file(
+            Gio.FileMonitorFlags.NONE, None
+        )
+        monitor.connect("changed", self._on_hosts_file_changed)
+        self._file_monitor = monitor
+
+    def _on_hosts_file_changed(
+        self,
+        _monitor: object,
+        _file: object,
+        _other_file: object,
+        event_type: object,
+    ) -> None:
+        from gi.repository import Gio
+
+        if event_type in (
+            Gio.FileMonitorEvent.CHANGES_DONE_HINT,
+            Gio.FileMonitorEvent.CREATED,
+        ):
+            self.refresh()
 
     # -- Switch ---------------------------------------------------------------
 
