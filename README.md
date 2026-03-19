@@ -132,6 +132,50 @@ email = "alice@work.example.com (set me)"
 
 Click **Configure accounts...** in the tray menu to open the file in your default editor.
 
+## Using with other git providers (Azure DevOps, GitLab, etc.)
+
+gh-switcher writes `git config --global user.name` and `user.email` when you switch accounts. If you also work with repos hosted on other providers (e.g. Azure DevOps, GitLab, Bitbucket), the global identity set by gh-switcher will apply to those repos too.
+
+To keep a separate identity for non-GitHub repos, use git's **conditional includes** (requires git 2.36+). This lets you scope an identity override by remote URL pattern, so gh-switcher can freely manage the global config without affecting your other repos.
+
+### Example: Azure DevOps
+
+Create an identity file:
+
+```bash
+mkdir -p ~/.config/git
+cat > ~/.config/git/ado-identity <<EOF
+[user]
+    name = Your Name
+    email = your.email@company.com
+EOF
+```
+
+Add a conditional include to `~/.gitconfig`:
+
+```gitconfig
+[includeIf "hasconfig:remote.*.url:git@ssh.dev.azure.com:v3/your-org/**"]
+    path = ~/.config/git/ado-identity
+```
+
+Any repo whose remote matches the pattern will use the identity from `ado-identity` instead of the global one. You can add multiple `includeIf` blocks for different providers or organisations.
+
+### Example: GitLab
+
+```gitconfig
+[includeIf "hasconfig:remote.*.url:https://gitlab.com/your-org/**"]
+    path = ~/.config/git/gitlab-identity
+```
+
+### Alternative: directory-based
+
+If you keep provider repos in separate directories, you can scope by path instead:
+
+```gitconfig
+[includeIf "gitdir:~/repos/work/"]
+    path = ~/.config/git/work-identity
+```
+
 ## Development
 
 ```bash
