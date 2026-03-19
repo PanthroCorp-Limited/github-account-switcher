@@ -1,3 +1,9 @@
+## [1.4.0](https://github.com/panthrocorp/github-account-switcher/compare/v1.3.0...v1.4.0) (2026-03-19)
+
+### Features
+
+* document multi-provider identity setup ([#10](https://github.com/panthrocorp/github-account-switcher/issues/10)) ([199b68c](https://github.com/panthrocorp/github-account-switcher/commit/199b68c3278d327913d4aed421348648c13ed08d))
+
 ## [1.3.0](https://github.com/panthrocorp/github-account-switcher/compare/v1.2.0...v1.3.0) (2026-03-02)
 
 ### Features
