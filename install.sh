@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # install.sh — gh-switcher installer
-# Usage: curl -fsSL https://raw.githubusercontent.com/panthrocorp/github-account-switcher/main/install.sh | bash
+# Usage: curl -fsSL https://raw.githubusercontent.com/PanthroCorp-Limited/github-account-switcher/main/install.sh | bash
 set -euo pipefail
 
 VENV_DIR="${HOME}/.local/share/gh-switcher"

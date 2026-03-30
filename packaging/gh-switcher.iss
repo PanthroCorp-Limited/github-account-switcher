@@ -9,9 +9,9 @@
 AppName=GitHub Account Switcher
 AppVersion={#MyAppVersion}
 AppPublisher=Panthrocorp
-AppPublisherURL=https://github.com/panthrocorp/github-account-switcher
-AppSupportURL=https://github.com/panthrocorp/github-account-switcher/issues
-AppUpdatesURL=https://github.com/panthrocorp/github-account-switcher/releases
+AppPublisherURL=https://github.com/PanthroCorp-Limited/github-account-switcher
+AppSupportURL=https://github.com/PanthroCorp-Limited/github-account-switcher/issues
+AppUpdatesURL=https://github.com/PanthroCorp-Limited/github-account-switcher/releases
 DefaultDirName={userpf}\gh-switcher
 DefaultGroupName=GitHub Account Switcher
 DisableProgramGroupPage=yes
