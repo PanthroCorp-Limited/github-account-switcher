@@ -30,7 +30,7 @@ A lightweight system tray app for switching between multiple GitHub accounts (`g
 
 ### From a release `.deb` (recommended)
 
-Download the `.deb` from the [latest release](https://github.com/panthrocorp/github-account-switcher/releases/latest) and install with:
+Download the `.deb` from the [latest release](https://github.com/PanthroCorp-Limited/github-account-switcher/releases/latest) and install with:
 
 ```bash
 sudo apt install ./gh-switcher_<version>_amd64.deb
@@ -43,7 +43,7 @@ sudo apt install ./gh-switcher_<version>_amd64.deb
 One-line install — fetches and runs the installer script:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/panthrocorp/github-account-switcher/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/PanthroCorp-Limited/github-account-switcher/main/install.sh | bash
 ```
 
 Installs to `~/.local/share/gh-switcher` and links the binary to `~/.local/bin/gh-switcher`. Re-running upgrades to the latest release.
@@ -78,7 +78,7 @@ ln -sf ~/.local/share/gh-switcher/bin/gh-switcher ~/.local/bin/gh-switcher
 sudo apt-get install -y gir1.2-xapp-1.0 python3-gi python3-gi-cairo
 
 # Clone and install
-git clone https://github.com/panthrocorp/github-account-switcher.git
+git clone https://github.com/PanthroCorp-Limited/github-account-switcher.git
 cd github-account-switcher
 make install
 ```
