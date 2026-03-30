@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "gh-switcher"
-version = "1.4.0"
+version = "1.4.1"
 description = "System tray app for switching between multiple GitHub accounts with git identity management"
 readme = "README.md"
 license = { text = "MIT" }

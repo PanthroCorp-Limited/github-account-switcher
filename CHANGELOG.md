@@ -1,3 +1,9 @@
+## [1.4.1](https://github.com/PanthroCorp-Limited/github-account-switcher/compare/v1.4.0...v1.4.1) (2026-03-30)
+
+### Bug Fixes
+
+* update GitHub org and switch to Dependabot ([#11](https://github.com/PanthroCorp-Limited/github-account-switcher/issues/11)) ([d7d71c0](https://github.com/PanthroCorp-Limited/github-account-switcher/commit/d7d71c072ff24502303782cbb6be9b51bd8d85a6))
+
 ## [1.4.0](https://github.com/PanthroCorp-Limited/github-account-switcher/compare/v1.3.0...v1.4.0) (2026-03-19)
 
 ### Features
