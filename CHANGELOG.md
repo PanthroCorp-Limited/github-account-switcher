@@ -1,3 +1,9 @@
+## [1.4.2](https://github.com/PanthroCorp-Limited/github-account-switcher/compare/v1.4.1...v1.4.2) (2026-11-01)
+
+### Bug Fixes
+
+* pass ruff 0.16 lint and pin the version ([#20](https://github.com/PanthroCorp-Limited/github-account-switcher/issues/20)) ([e3a83fa](https://github.com/PanthroCorp-Limited/github-account-switcher/commit/e3a83fa77ee7f3a4319007967a0d7ff91a7fe2d2))
+
 ## [1.4.1](https://github.com/PanthroCorp-Limited/github-account-switcher/compare/v1.4.0...v1.4.1) (2026-03-30)
 
 ### Bug Fixes
