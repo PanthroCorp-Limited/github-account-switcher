@@ -3,9 +3,8 @@ from __future__ import annotations
 from collections.abc import Callable
 from pathlib import Path
 
-from PIL import Image
-
 import pystray  # type: ignore[import]
+from PIL import Image
 
 from gh_switcher.tray.base import MenuItem, TrayBackend
 
@@ -56,9 +55,7 @@ class PystrayBackend(TrayBackend):
                 pystray.MenuItem(
                     text=item.label,
                     action=item.callback,
-                    checked=(lambda i: lambda _: i.checked)(item)
-                    if item.checked
-                    else None,
+                    checked=(lambda _: True) if item.checked else None,
                     enabled=item.enabled,
                 )
             )

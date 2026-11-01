@@ -15,6 +15,7 @@ def run_switch(username: str) -> None:
     """
     result = subprocess.run(
         ["gh", "auth", "switch", "--hostname", "github.com", "--user", username],
+        check=False,
         capture_output=True,
         text=True,
     )

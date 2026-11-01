@@ -32,6 +32,7 @@ def set_identity(name: str, email: str) -> None:
 def _git_config(key: str) -> str:
     result = subprocess.run(
         ["git", "config", "--global", key],
+        check=False,
         capture_output=True,
         text=True,
     )

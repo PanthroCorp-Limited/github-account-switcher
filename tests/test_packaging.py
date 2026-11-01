@@ -24,7 +24,9 @@ def test_core_modules_importable_without_gtk() -> None:
     module level, which would break CI environments.
     """
     # These imports must succeed without python3-gi installed.
-    from gh_switcher import accounts  # noqa: F401
-    from gh_switcher import config  # noqa: F401
-    from gh_switcher import identity  # noqa: F401
-    from gh_switcher import switcher  # noqa: F401
+    from gh_switcher import (
+        accounts,  # noqa: F401
+        config,  # noqa: F401
+        identity,  # noqa: F401
+        switcher,  # noqa: F401
+    )
