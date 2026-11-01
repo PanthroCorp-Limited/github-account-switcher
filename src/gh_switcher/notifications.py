@@ -11,7 +11,7 @@ def notify(title: str, message: str) -> None:
             _notify_send(title, message)
         else:
             _plyer_notify(title, message)
-    except Exception:
+    except Exception:  # noqa: BLE001, S110 - plyer backends raise arbitrary errors and a notification is best-effort
         pass
 
 

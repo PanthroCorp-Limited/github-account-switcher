@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import functools
 import subprocess
 import sys
 from pathlib import Path
@@ -103,7 +104,7 @@ class GhSwitcherApp:
             items.append(
                 MenuItem(
                     label=username,
-                    callback=(lambda u: lambda: self.switch_to(u))(username),
+                    callback=functools.partial(self.switch_to, username),
                     checked=account.active,
                 )
             )

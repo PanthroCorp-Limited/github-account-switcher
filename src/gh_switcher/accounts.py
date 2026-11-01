@@ -5,7 +5,6 @@ from pathlib import Path
 
 import yaml
 
-
 HOSTS_FILE = Path.home() / ".config" / "gh" / "hosts.yml"
 
 

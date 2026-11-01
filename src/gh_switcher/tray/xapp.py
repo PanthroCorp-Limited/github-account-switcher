@@ -8,9 +8,9 @@ import gi
 gi.require_version("Gtk", "3.0")
 gi.require_version("XApp", "1.0")
 
-from gi.repository import GLib, Gtk, XApp  # noqa: E402
+from gi.repository import GLib, Gtk, XApp
 
-from gh_switcher.tray.base import MenuItem, TrayBackend  # noqa: E402
+from gh_switcher.tray.base import MenuItem, TrayBackend
 
 
 class XAppTrayBackend(TrayBackend):

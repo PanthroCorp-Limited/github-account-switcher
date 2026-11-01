@@ -9,7 +9,6 @@ import platformdirs
 from gh_switcher.accounts import GhAccount
 from gh_switcher.identity import GitIdentity
 
-
 CONFIG_DIR = Path(platformdirs.user_config_dir("gh-switcher"))
 ACCOUNTS_FILE = CONFIG_DIR / "accounts.toml"
 

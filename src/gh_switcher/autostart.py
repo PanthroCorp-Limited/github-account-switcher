@@ -73,13 +73,13 @@ def _winreg_get() -> str | None:
         with winreg.OpenKey(winreg.HKEY_CURRENT_USER, _REG_KEY) as key:
             value, _ = winreg.QueryValueEx(key, _REG_VALUE)
             return value
-    except Exception:
+    except (ImportError, OSError):
         return None
 
 
 def _winreg_enable() -> None:
-    import winreg  # type: ignore[import]
     import shutil
+    import winreg  # type: ignore[import]
 
     exec_path = shutil.which("gh-switcher") or sys.executable
     with winreg.OpenKey(
